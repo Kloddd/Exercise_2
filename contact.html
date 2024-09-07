@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: twiceclodzz@gmail.com</p>
+        <p>Contact Number: 09483700439 / 09486253965</p>
+        <p>Facebook: <a class="https://www.facebook.com/phamminjiiii" href="https://www.facebook.com/phamminjiiii" target="_blank">Klods Mygyl</a></p>
+
+    </section>
+
+    <section id="resume">
+        <h2>Resume</h2>
+        <img src="reshomey.jpg.jpg" alt="resume" width="450" height="600">
+    </section>
+    <a href="index.html" class="back-button">Back</a>
+    <button id="theme-toggle">Change Theme</button>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        const lightTheme = {
+            '--background-color': '#FFFFFF',
+            '--text-color': '#000000',
+            '--h2-text-color': '#000000',
+            'background-image': 'none'
+        };
+        
+        const darkTheme = {
+            '--background-color': '#000000',
+            '--text-color': '#FFFFFF',
+            '--h2-text-color': '#FFFFFF', 
+            'background-image': 'url("background.jpg")'
+        };
+        
+        Object.keys(darkTheme).forEach(key => {
+            if (key === 'background-image') {
+                document.body.style.backgroundImage = darkTheme[key];
+            } else {
+                document.documentElement.style.setProperty(key, darkTheme[key]);
+            }
+        });
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.style.getPropertyValue('--background-color') === '#000000' ? 'dark' : 'light';
+            
+            if (currentTheme === 'dark') {
+                Object.keys(lightTheme).forEach(key => {
+                    if (key === 'background-image') {
+                        document.body.style.backgroundImage = lightTheme[key];
+                    } else {
+                        document.documentElement.style.setProperty(key, lightTheme[key]);
+                    }
+                });
+             
+                document.querySelectorAll('h2').forEach(h2 => h2.style.color = lightTheme['--h2-text-color']);
+            } else {
+                Object.keys(darkTheme).forEach(key => {
+                    if (key === 'background-image') {
+                        document.body.style.backgroundImage = darkTheme[key];
+                    } else {
+                        document.documentElement.style.setProperty(key, darkTheme[key]);
+                    }
+                });
+                
+                document.querySelectorAll('h2').forEach(h2 => h2.style.color = darkTheme['--h2-text-color']);
+            }
+        });
+    </script>
+
+</body>
+</html>

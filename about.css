@@ -1,0 +1,122 @@
+:root {
+    --background-color: #333;
+    --text-color: #fff;
+    --back-button-border-color: transparent;
+    --back-button-font-color: black;
+}
+
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    color: white;
+    background-image: url("background.jpg");
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    color: var(--text-color); 
+    text-align: center; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    background-color: transparent;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    background-color: transparent;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: gray;
+}
+
+.social-links {
+    text-align: center;
+    margin-top: 100px; 
+}
+
+
+.social-links a:hover {
+    background-color: gray; 
+    color: #fff; 
+}
+main {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+section {
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: white;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.back-button {
+    background-color: white;
+    color: var(--back-button-font-color);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    border: 1px solid var(--back-button-border-color);
+}
+
+.back-button:hover {
+    background-color: gray;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer p {
+    margin-bottom: 5px;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.light-mode {
+    --background-color: #fff;
+    --text-color: #333;
+    --back-button-border-color: black;
+    --back-button-font-color: white;
+}

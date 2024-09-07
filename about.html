@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi there! I'm Clywd Mygyl L. Dinoy, an irregular student at Holy Cross of Davao College. While I may not have followed the traditional academic path, my journey has been filled with unique experiences and valuable lessons. I'm eager to explore my passions and how can it contribute to my academic pursuits. I'm excited to be a part of the Holy Cross of Davao College community and look forward to connecting with new friends and mentors.</p>
+        </section>
+        <section id="education">
+            <h2>Education</h2>
+            <ul>
+                <li>
+                    <p> SENIOR HIGH SCHOOL </p>
+                    <p> <a class="https://www.facebook.com/davaodoctorscollege" href="https://www.facebook.com/davaodoctorscollege" target="_blank">Davao Doctors College Inc.</a></p>
+                    <p>2021-2023</p>
+                </li>
+                <li>
+                    <p> JUNIOR HIGH SCHOOL </p>
+                    <p> <a class="https://www.facebook.com/communalnationalhighschool" href="https://www.facebook.com/communalnationalhighschool" target="_blank">Communal National High School</a></p>
+                    <p>2020-2021</p>
+                </li>
+                <li>
+                    <p> ELEMENTARY</p>
+                    <p> <a class="https://www.facebook.com/communalelementaryschool" href="https://www.facebook.com/communalelementaryschool" target="_blank">Communal Elementary School</a></p>
+                    <p>2016-2017</p>
+                </li>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Communicating</li>
+                <li>Multitasking</li>
+                <li>Critical Thinking</li>
+                <li>Problem Solving</li>
+                <li>Time Management</li>
+                <li>Handling Pressure Tasks</li>
+            </ul>
+        </section>
+        <a href="index.html" class="back-button">Back</a>
+        <button id="theme-toggle">Change Theme</button>
+    </main>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        const lightTheme = {
+            '--background-color': '#FFFFFF',
+            '--text-color': '#000000',
+            '--h2-text-color': '#000000',
+            'background-image': 'none'
+        };
+        
+        const darkTheme = {
+            '--background-color': '#000000',
+            '--text-color': '#FFFFFF',
+            '--h2-text-color': '#FFFFFF', 
+            'background-image': 'url("background.jpg")'
+        };
+        
+        Object.keys(darkTheme).forEach(key => {
+            if (key === 'background-image') {
+                document.body.style.backgroundImage = darkTheme[key];
+            } else {
+                document.documentElement.style.setProperty(key, darkTheme[key]);
+            }
+        });
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.style.getPropertyValue('--background-color') === '#000000' ? 'dark' : 'light';
+            
+            if (currentTheme === 'dark') {
+                Object.keys(lightTheme).forEach(key => {
+                    if (key === 'background-image') {
+                        document.body.style.backgroundImage = lightTheme[key];
+                    } else {
+                        document.documentElement.style.setProperty(key, lightTheme[key]);
+                    }
+                });
+               
+                document.querySelectorAll('h2').forEach(h2 => h2.style.color = lightTheme['--h2-text-color']);
+            } else {
+                Object.keys(darkTheme).forEach(key => {
+                    if (key === 'background-image') {
+                        document.body.style.backgroundImage = darkTheme[key];
+                    } else {
+                        document.documentElement.style.setProperty(key, darkTheme[key]);
+                    }
+                });
+               
+                document.querySelectorAll('h2').forEach(h2 => h2.style.color = darkTheme['--h2-text-color']);
+            }
+        });
+    </script>
+</body>
+</html>
